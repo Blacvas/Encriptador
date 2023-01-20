@@ -1,0 +1,129 @@
+body{
+    background-color: #F3F5FC;
+    font-family: 'Inter', sans-serif;
+}
+
+main{
+    padding: 40px;
+    display: inline-flex;
+}
+
+.ingresatexto{
+    width: 900px;
+    display: inline-flex;
+}
+
+.proporcion{
+    
+    display: inline-block;
+    background-color: #F3F5FC;
+}
+
+.logo{
+    display: inline-block;
+    width: 25px;
+}
+
+.ingresatexto textarea{
+    padding: 80px 80px 0px 150px;
+    font-size: 32px;
+    color: #0A3871;
+    resize: none;
+    height: 450px;
+    width: 670px;
+    border: 0px;
+    outline: 0px;
+    background-color: #F3F5FC;
+    display: inline-flex;
+    font-family: 'Inter', sans-serif;
+}
+
+.ingresatexto textarea::placeholder{
+    color: #0A3871;
+}
+
+.botones{
+    width: 700px;
+    position: relative;
+    margin: 0px auto;
+    background-color:#F3F5FC;
+}
+
+.botones #encrip{
+    width: 300px;
+    /*Espaciamiento interno arriba y abajo y cero a los laterales*/
+    padding: 15px 0;
+    font-size: 16px;
+    color: white;
+    background: #0A3871;
+    border-radius: 24px;
+    /*Cambiamos el cursor por el de la manita cuando se posiciona sobre el boton*/
+    cursor: pointer;
+    margin: 0px 15px;
+}
+
+.bot_desen{
+    width: 300px;
+    /*Espaciamiento interno arriba y abajo y cero a los laterales*/
+    padding: 15px 0;
+    font-size: 16px;
+    color: #0A3871;
+    background: #D8DFE8;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    /*Cambiamos el cursor por el de la manita cuando se posiciona sobre el boton*/
+    cursor: pointer;
+}
+
+.mostrartexto{
+    width: 350px;
+    height: 650px;
+    display:inline-flex;
+    border-radius: 32px;
+    background-color: #FFFFFF;
+    margin: 0px 0px 0px 150px;
+    box-shadow: 0px 0px 15px -10px #000000;
+}
+
+.centrar, .centrar2{
+    width: 300px;
+    margin: auto auto;
+    background-color: #ffffff;
+}
+
+.buscatexto{
+    width: 300px;
+}
+
+.textoimg{
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+
+.textoimg1{
+    padding: 20px 0 0 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+
+.textoimg2{
+    padding: 20px 0 0 0;
+    color: #495057;
+}
+
+.mostrartexto textarea{
+    resize: none;
+    color: #495057;
+    font-family: 'Inter', sans-serif;
+}
+
+.centrar2 textarea{
+    height: 450px;
+    width: 300px;
+    font-size: 22px;
+    border: 0px;
+    outline: 0px;
+    background-color: #FFFFFF;
+    display: inline-flex;
+}

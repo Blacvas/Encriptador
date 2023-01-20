@@ -1,0 +1,160 @@
+<!--
+    Se creo una paguina que encripta y desencripta palabras
+-->
+
+<!DOCTYPE html>
+
+<html lang="esp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Encripta Desencripta</title>
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        
+        <main>
+            <section class="ingresatexto">
+                <div class="proporcion">
+                    <h1> <img src="imagenes/Logo.png" alt="logo" class="logo"></h1>
+                    <textarea type="text" id="mensaje"  class="input-padron" required placeholder="Ingresa texto aqui"></textarea>
+                    <div class="botones">
+                        <button id="encrip">Encriptar</button>
+                        <button class="bot_desen" id="desen">Desencriptar</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mostrartexto">
+                <div class="centrar" id="div_centrar">
+                    <img src="imagenes/Muñeco.png" alt="" class="buscatexto">
+                    <div class="textoimg">
+                        <p class="textoimg1">Ningun mensaje fue encontrado</p>
+                        <p class="textoimg2">Ingresa el texto que deseas encriptar o desencriptar</p>
+                    </div>
+                </div>
+                <div class="centrar2" id="div_centrar2">
+                    <textarea type="text" id="mensaje2" class="input-padron" readonly> </textarea>
+                    <button class="bot_desen" class="cliptext" id="copiar">Copiar</button>
+                </div>
+            </section>
+                        
+        </main>
+        
+        <footer>
+
+        </footer>
+    </body>
+</html>
+
+<script>
+
+    function click(){
+        let cont = 0, aux, nfrase = [],frasesine = "";
+        let frase = input.value;
+
+        if(frase.length==0){
+            centrar.style.display = 'block';
+            centrar2.style.display = 'none';
+        }else{
+            centrar.style.display = 'none';
+            centrar2.style.display = 'block';
+        }
+        
+        console.log(frase);
+        for(let i=0; i<frase.length;i++){
+            aux = frase[i];
+            switch(aux){
+                case 'a':
+                    nfrase.push("ai");
+                    break;
+                case 'e':
+                    nfrase.push("enter");
+                    break;
+                case 'i':
+                    nfrase.push("imes");
+                    break;
+                case 'o':
+                    nfrase.push("ober");
+                    break;
+                case 'u':
+                    nfrase.push("ufat");
+                    break;
+                default:
+                    nfrase.push(aux);
+                    break;
+            }
+            frasesine = frasesine + nfrase[i];
+        }
+        document.getElementById("mensaje2").value = frasesine;
+        document.getElementById("mensaje").value = "";        
+    }
+
+    function clickdesn(){
+        let aux, frasesine = "";
+        let frase = input.value;
+        
+        console.log(frase);
+        for(let i=0; i<frase.length;i++){
+            aux = frase[i];
+            switch(aux){
+                case 'a':
+                    frasesine = frasesine + "a";
+                    i++;
+                    break;
+                case 'e':
+                    frasesine = frasesine + "e";
+                    i = i + 4;
+                    break;
+                case 'i':
+                    frasesine = frasesine + "i";
+                    i = i + 3;
+                    break;
+                case 'o':
+                    frasesine = frasesine + "o";
+                    i = i + 3;
+                    break;
+                case 'u':
+                    frasesine = frasesine + "u";
+                    i = i + 3;
+                    break;
+                default:
+                    frasesine = frasesine + aux;
+                    break;
+            }
+        }
+        document.getElementById("mensaje2").value = frasesine;
+        document.getElementById("mensaje").value = "";        
+    }
+
+    function copiar(){
+        navigator.clipboard.writeText(input2.value).then(
+        () => {
+            /* clipboard successfully set */
+        },
+        () => {
+            /* clipboard write failed */
+        }
+        );
+    }
+
+    let input = document.querySelector('textarea[id="mensaje"]');
+    let input2 = document.querySelector('textarea[id="mensaje2"]');
+    let button = document.querySelector('button[id="encrip"]');
+    let button2 = document.querySelector('button[id="desen"]');
+    let buttoncopiar = document.querySelector('button[id="copiar"]');
+    let centrar = document.getElementById('div_centrar');
+    let centrar2 = document.getElementById('div_centrar2');
+    // Focaliza el curso en la caja de texto una vez se inicie el programa
+    input.focus();
+
+    //Funcion a ejecutar cuando se presione el boton
+    button.onclick = click;
+    button2.onclick = clickdesn;
+    buttoncopiar.onclick = copiar;
+    centrar.style.display = 'block';
+    centrar2.style.display = 'none';
+</script>
